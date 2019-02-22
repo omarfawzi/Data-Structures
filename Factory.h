@@ -2,9 +2,6 @@
 // Created by salama on 2/22/19.
 //
 
-#ifndef UNTITLED_FACTORY_H
-#define UNTITLED_FACTORY_H
-
 #include "DSInterface.h"
 #include "LinkedList.h"
 
@@ -20,5 +17,3 @@ public:
         }
     }
 };
-
-#endif //UNTITLED_FACTORY_H
