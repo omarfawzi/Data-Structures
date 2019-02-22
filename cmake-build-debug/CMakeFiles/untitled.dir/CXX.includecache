@@ -1,0 +1,24 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/home/salama/CLionProjects/untitled/DSInterface.h
+
+/home/salama/CLionProjects/untitled/Factory.h
+DSInterface.h
+/home/salama/CLionProjects/untitled/DSInterface.h
+LinkedList.h
+/home/salama/CLionProjects/untitled/LinkedList.h
+
+/home/salama/CLionProjects/untitled/LinkedList.h
+
+/home/salama/CLionProjects/untitled/main.cpp
+bits/stdc++.h
+-
+Factory.h
+/home/salama/CLionProjects/untitled/Factory.h
+
