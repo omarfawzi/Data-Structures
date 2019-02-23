@@ -7,13 +7,17 @@ template<typename T>
 
 class DoubleLinkedList : public ListInterface<T> {
 private :
-    DoubleLinkedListNode<T> *listNode;
+    DoubleLinkedListNode<T> *head;
+    DoubleLinkedListNode<T> *tail;
 public:
-    void insert(T item) override {
-
+    void insertLast(T item) override {
+        DoubleLinkedListNode<T> * current = this->head;
     }
 
     void insertAfter(T item ,int index) override {
+    }
+
+    void insertFirst(T item) override {
 
     }
 

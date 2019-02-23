@@ -20,4 +20,6 @@ public:
 
     virtual void insertAfter(T item , int index) = 0;
 
+    virtual void insertFirst(T item) = 0;
+
 };

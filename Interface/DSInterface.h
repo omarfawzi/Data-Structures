@@ -8,7 +8,7 @@ class DSInterface {
 protected:
     int size = 0;
 public:
-    virtual void insert(T item) = 0;
+    virtual void insertLast(T item) = 0;
 
     virtual void print() = 0;
 
