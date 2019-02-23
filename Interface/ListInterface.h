@@ -17,4 +17,7 @@ public:
     virtual void removeByValue(T value) = 0;
 
     virtual int getValueIndex(T value) = 0;
+
+    virtual void insertAfter(T item , int index) = 0;
+
 };

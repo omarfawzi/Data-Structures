@@ -6,11 +6,6 @@ template<typename T>
 
 struct LinkedListNode {
 public:
-
-    LinkedListNode() {
-
-    }
-
     LinkedListNode<T>(T data) {
         this->data = data;
     }

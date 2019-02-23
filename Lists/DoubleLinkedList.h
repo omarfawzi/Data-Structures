@@ -1,12 +1,19 @@
+#include "Nodes/DoubleLinkedListNode.h"
+
 //
 // Created by salama on 2/23/19.
 //
-
 template<typename T>
 
 class DoubleLinkedList : public ListInterface<T> {
+private :
+    DoubleLinkedListNode<T> *listNode;
 public:
     void insert(T item) override {
+
+    }
+
+    void insertAfter(T item ,int index) override {
 
     }
 

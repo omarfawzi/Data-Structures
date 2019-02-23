@@ -3,6 +3,7 @@
 //
 #include "../Interface/ListInterface.h"
 #include "Nodes/LinkedListNode.h"
+
 template<typename T>
 
 class LinkedList : public ListInterface<T> {
@@ -18,6 +19,28 @@ public:
                 current = current->next;
             }
             current->next = new LinkedListNode<T>(item);
+        }
+        this->size++;
+    }
+
+    void insertAfter(T item, int index) override {
+        if (index < 1)
+            return;
+        if (index >= this->size)
+            this->insert(item);
+        else {
+            int i = 1 ;
+            LinkedListNode<T> *current = this->listNode;
+            while (current != nullptr) {
+                if (index == i){
+                    LinkedListNode<T> *temp = current->next;
+                    current->next = new LinkedListNode<T>(item);
+                    current->next->next = temp;
+                    break;
+                }
+                current = current->next;
+                i++;
+            }
         }
         this->size++;
     }
