@@ -11,7 +11,16 @@ private :
     DoubleLinkedListNode<T> *tail;
 public:
     void insertLast(T item) override {
-        DoubleLinkedListNode<T> * current = this->head;
+        DoubleLinkedListNode<T> * newNode = new DoubleLinkedListNode<T>(item);
+        if (this->head == nullptr){
+            this->head = newNode ;
+            this->tail = newNode ;
+        }else {
+            this->tail->next = newNode;
+            newNode->prev = this->tail;
+            this->tail = newNode;
+        }
+        this->size++;
     }
 
     void insertAfter(T item ,int index) override {
@@ -44,7 +53,7 @@ public:
     }
 
     void print() override {
-        if (this->size == 0)
+        if (this->head == nullptr)
             return;
         DoubleLinkedListNode<T> *current = this->head;
         if (this->size == 1) {

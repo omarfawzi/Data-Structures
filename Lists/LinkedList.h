@@ -118,7 +118,7 @@ public:
     }
 
     void print() override {
-        if (this->size == 0)
+        if (this->head == nullptr)
             return;
         LinkedListNode<T> *current = this->head;
         if (this->size == 1) {

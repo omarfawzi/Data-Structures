@@ -11,10 +11,9 @@ int main() {
     Factory<int> *listFactory = abstractFactory->getFactory("List");
     try {
         ListInterface<int> *list = listFactory->getList("DoubleLinkedList");
-        list->insertFirst(1);
-        list->insertFirst(2);
-        list->insertFirst(3);
-
+        list->insertLast(1);
+        list->insertLast(2);
+        list->insertLast(3);
         list->print();
     } catch (exception const &ex) {
         cout << ex.what();
