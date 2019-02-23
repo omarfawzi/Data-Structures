@@ -14,6 +14,8 @@ This repository classifies datastructure into :
   - Circular Linked List (0%)
 - Stack (0%)
 - Queue (0%)
+
+### Non Linear Data Structures
 - Trees (0%)
   - Min Heap (0%)
   - Max Heap (0%)
