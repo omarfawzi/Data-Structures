@@ -70,31 +70,7 @@ public:
         }
     }
 
-    void removeByValue(T value) override {
-        if (this->size == 0)
-            return;
-        int i = 0;
-        LinkedListNode<T> *current = this->head;
-        if (this->size == 1) {
-            delete this->head;
-        } else if (value == this->head->data) {
-            this->head = this->head->next;
-        } else {
-            LinkedListNode<T> *prev = current;
-            while (current != nullptr) {
-                if (current->data == value) {
-                    prev->next = current->next;
-                    break;
-                }
-                prev = current;
-                current = current->next;
-                i++;
-            }
-        }
-        this->size--;
-    }
-
-    void removeByIndex(int index) override {
+    void remove(int index) override {
         if (this->head == nullptr) {
             return ;
         }
@@ -133,7 +109,7 @@ public:
         std::cout << "\n";
     }
 
-    int getValueIndex(T value) override {
+    int search(T value) override {
         if (this->head == nullptr) {
             return -1 ;
         }

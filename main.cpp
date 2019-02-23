@@ -11,7 +11,6 @@ int main() {
     Factory<int> *listFactory = abstractFactory->getFactory("List");
     try {
         ListInterface<int> *list = listFactory->getList("DoubleLinkedList");
-
     } catch (exception const &ex) {
         cout << ex.what();
     }
