@@ -9,6 +9,8 @@ public:
 
     DoubleLinkedListNode<T>(T data) {
         this->data = data;
+        this->next = nullptr;
+        this->prev = nullptr;
     }
 
     T data;

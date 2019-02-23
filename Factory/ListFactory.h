@@ -17,7 +17,7 @@ public:
         if (list == "DoubleLinkedList") {
             return new DoubleLinkedList<T>();
         } else {
-            throw std::out_of_range("Invalid List Type " + list);
+            throw std::out_of_range("Invalid List Type : " + list);
         }
     }
 };

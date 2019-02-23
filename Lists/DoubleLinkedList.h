@@ -18,7 +18,17 @@ public:
     }
 
     void insertFirst(T item) override {
-
+        DoubleLinkedListNode<T> * newNode = new DoubleLinkedListNode<T>(item);
+        if (this->head == nullptr){
+            this->head = newNode ;
+            this->tail = newNode ;
+        }
+        else {
+            this->head->prev = newNode;
+            newNode->next = this->head;
+            this->head = newNode;
+        }
+        this->size++;
     }
 
     void update(int index, T updateValue) override {
@@ -34,7 +44,19 @@ public:
     }
 
     void print() override {
-
+        if (this->size == 0)
+            return;
+        DoubleLinkedListNode<T> *current = this->head;
+        if (this->size == 1) {
+            std::cout << this->head->data;
+        } else {
+            while (current->next != nullptr) {
+                std::cout << current->data << "->";
+                current = current->next;
+            }
+            std::cout << current->data;
+        }
+        std::cout << "\n";
     }
 
     int getSize() override {
