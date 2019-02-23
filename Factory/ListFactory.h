@@ -2,8 +2,8 @@
 // Created by salama on 2/22/19.
 //
 
-#include "../Lists/LinkedList.h"
-#include "../Lists/DoubleLinkedList.h"
+#include "../Linear/Lists/LinkedList.h"
+#include "../Linear/Lists/DoubleLinkedList.h"
 #include "Factory.h"
 
 template<typename T>
