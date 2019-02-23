@@ -1,14 +1,17 @@
 
 #include <bits/stdc++.h>
 
-#include "Factory.h"
+#include "Factory/ListFactory.h"
+#include "Factory/AbstractFactory.h"
 
 using namespace std;
 
 int main() {
+    AbstractFactory<int> *abstractFactory;
+    Factory<int> *listFactory = abstractFactory->getFactory("List");
     try {
-        DSInterface<int> *linkedList = (Factory<int>()).getDataStructure("LinkedList");
-    } catch (exception const& ex) {
+        ListInterface<int> *linkedList = listFactory->getList("LinkedList");
+    } catch (exception const &ex) {
         cout << ex.what();
     }
 }

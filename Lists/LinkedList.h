@@ -1,33 +1,21 @@
 //
 // Created by salama on 2/22/19.
 //
-template<typename T>
-
-struct node {
-public:
-    explicit node<T>(T data) {
-        this->data = data;
-    }
-
-    T data;
-    struct node *next;
-};
+#include "../Interface/ListInterface.h"
 
 template<typename T>
 
-class LinkedList : public DSInterface<T> {
-private:
-    node<T> *list;
+class LinkedList : public ListInterface<T> {
 public:
     void insert(T item) override {
-        node<T> *current = list;
+        ListNode<T> *current = this->listNode;
         if (current == nullptr) {
-            list = new node<T>(item);
+            this->listNode = new ListNode<T>(item);
         } else {
             while (current->next != nullptr) {
                 current = current->next;
             }
-            current->next = new node<T>(item);
+            current->next = new ListNode<T>(item);
         }
         this->size++;
     }
@@ -36,7 +24,7 @@ public:
         if (this->size == 0)
             return;
         int i = 0;
-        node<T> *current = list;
+        ListNode<T> *current = this->listNode;
         while (current != nullptr) {
             if (index - 1 == i) {
                 current->data = updateValue;
@@ -51,13 +39,13 @@ public:
         if (this->size == 0)
             return;
         int i = 0;
-        node<T> *current = list;
+        ListNode<T> *current = this->listNode;
         if (this->size == 1) {
-            delete list;
-        } else if (value == list->data) {
-            list = list->next;
+            delete this->listNode;
+        } else if (value == this->listNode->data) {
+            this->listNode = this->listNode->next;
         } else {
-            node<T> *prev = current;
+            ListNode<T> *prev = current;
             while (current != nullptr) {
                 if (current->data == value) {
                     prev->next = current->next;
@@ -75,11 +63,11 @@ public:
         if (this->size == 0 || index > this->size)
             return;
         int i = 0;
-        node<T> *current = list;
+        ListNode<T> *current = this->listNode;
         if (this->size == 1) {
-            delete list;
+            delete this->listNode;
         } else if (index == 1) {
-            list = list->next;
+            this->listNode = this->listNode->next;
         } else {
             while (current != nullptr) {
                 if (index - 1 == i + 1) {
@@ -96,9 +84,9 @@ public:
     void print() override {
         if (this->size == 0)
             return;
-        node<T> *current = list;
+        ListNode<T> *current = this->listNode;
         if (this->size == 1) {
-            std::cout << list->data;
+            std::cout << this->listNode->data;
         } else {
             while (current->next != nullptr) {
                 std::cout << current->data << "->";
@@ -113,7 +101,7 @@ public:
         if (this->size == 0)
             return -1;
         int i = 1;
-        node<T> *current = list;
+        ListNode<T> *current = this->listNode;
         int searchResult = -1;
         while (current != nullptr) {
             if (current->data == value) {
