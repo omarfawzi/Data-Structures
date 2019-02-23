@@ -35,11 +35,9 @@ public:
     }
 
     void insertAfter(T item, int index) override {
-        if (index < 1)
-            return;
-        if (index >= this->size) {
+        if (this->head == nullptr) {
             this->insertLast(item);
-            return;
+            return ;
         }
         int i = 1;
         LinkedListNode<T> *current = this->head;
@@ -57,8 +55,9 @@ public:
     }
 
     void update(int index, T updateValue) override {
-        if (this->size == 0)
-            return;
+        if (this->head == nullptr) {
+            return ;
+        }
         int i = 0;
         LinkedListNode<T> *current = this->head;
         while (current != nullptr) {
@@ -96,8 +95,9 @@ public:
     }
 
     void removeByIndex(int index) override {
-        if (this->size == 0 || index > this->size)
-            return;
+        if (this->head == nullptr) {
+            return ;
+        }
         int i = 0;
         LinkedListNode<T> *current = this->head;
         if (this->size == 1) {
@@ -134,8 +134,9 @@ public:
     }
 
     int getValueIndex(T value) override {
-        if (this->size == 0)
-            return -1;
+        if (this->head == nullptr) {
+            return -1 ;
+        }
         int i = 1;
         LinkedListNode<T> *current = this->head;
         int searchResult = -1;

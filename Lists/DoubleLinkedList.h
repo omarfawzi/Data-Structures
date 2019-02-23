@@ -24,6 +24,42 @@ public:
     }
 
     void insertAfter(T item ,int index) override {
+        DoubleLinkedListNode<T> * newNode = new DoubleLinkedListNode<T>(item);
+        if (this->head == nullptr){
+            this->head = newNode ;
+            this->tail = newNode ;
+        }
+        else if (index > this->size / 2){
+            int i = this->size;
+            DoubleLinkedListNode<T> * current = this->tail;
+            while (current != nullptr)
+            {
+                if (index == i){
+                    newNode->prev = current;
+                    newNode->next = current->next;
+                    current->next = newNode;
+                    break;
+                }
+                current = current->prev;
+                i--;
+            }
+        }else {
+            int i = 1;
+            DoubleLinkedListNode<T> * current = this->head;
+            while (current != nullptr)
+            {
+                if (index == i){
+                    newNode->prev = current;
+                    newNode->next = current->next;
+                    current->next = newNode;
+                    break;
+                }
+                current = current->next;
+                i++;
+            }
+        }
+        this->size++;
+
     }
 
     void insertFirst(T item) override {
