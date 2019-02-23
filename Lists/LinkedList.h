@@ -2,20 +2,22 @@
 // Created by salama on 2/22/19.
 //
 #include "../Interface/ListInterface.h"
-
+#include "Nodes/LinkedListNode.h"
 template<typename T>
 
 class LinkedList : public ListInterface<T> {
+private:
+    LinkedListNode<T> *listNode;
 public:
     void insert(T item) override {
-        ListNode<T> *current = this->listNode;
+        LinkedListNode<T> *current = this->listNode;
         if (current == nullptr) {
-            this->listNode = new ListNode<T>(item);
+            this->listNode = new LinkedListNode<T>(item);
         } else {
             while (current->next != nullptr) {
                 current = current->next;
             }
-            current->next = new ListNode<T>(item);
+            current->next = new LinkedListNode<T>(item);
         }
         this->size++;
     }
@@ -24,7 +26,7 @@ public:
         if (this->size == 0)
             return;
         int i = 0;
-        ListNode<T> *current = this->listNode;
+        LinkedListNode<T> *current = this->listNode;
         while (current != nullptr) {
             if (index - 1 == i) {
                 current->data = updateValue;
@@ -39,13 +41,13 @@ public:
         if (this->size == 0)
             return;
         int i = 0;
-        ListNode<T> *current = this->listNode;
+        LinkedListNode<T> *current = this->listNode;
         if (this->size == 1) {
             delete this->listNode;
         } else if (value == this->listNode->data) {
             this->listNode = this->listNode->next;
         } else {
-            ListNode<T> *prev = current;
+            LinkedListNode<T> *prev = current;
             while (current != nullptr) {
                 if (current->data == value) {
                     prev->next = current->next;
@@ -63,7 +65,7 @@ public:
         if (this->size == 0 || index > this->size)
             return;
         int i = 0;
-        ListNode<T> *current = this->listNode;
+        LinkedListNode<T> *current = this->listNode;
         if (this->size == 1) {
             delete this->listNode;
         } else if (index == 1) {
@@ -84,7 +86,7 @@ public:
     void print() override {
         if (this->size == 0)
             return;
-        ListNode<T> *current = this->listNode;
+        LinkedListNode<T> *current = this->listNode;
         if (this->size == 1) {
             std::cout << this->listNode->data;
         } else {
@@ -101,7 +103,7 @@ public:
         if (this->size == 0)
             return -1;
         int i = 1;
-        ListNode<T> *current = this->listNode;
+        LinkedListNode<T> *current = this->listNode;
         int searchResult = -1;
         while (current != nullptr) {
             if (current->data == value) {

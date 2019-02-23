@@ -4,17 +4,17 @@
 
 template<typename T>
 
-struct ListNode {
+struct LinkedListNode {
 public:
 
-    ListNode() {
+    LinkedListNode() {
 
     }
 
-    ListNode<T>(T data) {
+    LinkedListNode<T>(T data) {
         this->data = data;
     }
 
     T data;
-    struct ListNode *next;
+    struct LinkedListNode *next;
 };
