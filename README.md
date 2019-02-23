@@ -24,6 +24,6 @@ This repository classifies datastructure into :
   - Interval Tree (0%)
   - Segment Tree (0%)
 
-Further benchmarks will be added .
+Further benchmarks will be added introducing time and space complexity for each data structure.
 
 You are welcome to contribute to this repo by any way .
