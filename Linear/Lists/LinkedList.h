@@ -126,8 +126,4 @@ public:
         }
         return searchResult;
     }
-
-    int getSize() override {
-        return this->size;
-    }
 };

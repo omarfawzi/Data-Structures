@@ -12,5 +12,7 @@ public:
 
     virtual void print() = 0;
 
-    virtual int getSize() = 0;
+    int getSize(){
+        return this->size;
+    };
 };

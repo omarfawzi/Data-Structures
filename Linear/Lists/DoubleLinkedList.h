@@ -163,10 +163,6 @@ public:
         std::cout << "\n";
     }
 
-    int getSize() override {
-        return this->size;
-    }
-
     int search(T value) override {
         if (this->head == nullptr)
             return -1;
