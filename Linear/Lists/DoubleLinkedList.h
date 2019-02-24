@@ -101,22 +101,35 @@ public:
         this->size++;
     }
 
-    void remove(int index) override {
+    void pop() override {
         if (this->head == nullptr) {
             return;
         }
-        else if (index == 1){
+        if (this->head->next == nullptr) {
+            this->head = nullptr;
+            delete this->head;
+        } else {
             DoubleLinkedListNode<T> *current = this->head;
             current->next->prev = nullptr;
             this->head = current->next;
+            delete current;
         }
-        else if (index == this->size)
-        {
+        this->size--;
+    }
+
+    void remove(int index) override {
+        if (index < 1 || index > this->size)
+            return;
+        if (this->head == nullptr) {
+            return;
+        } else if (index == 1) {
+            this->pop();
+            return;
+        } else if (index == this->size) {
             DoubleLinkedListNode<T> *current = this->tail;
             current->prev->next = nullptr;
             this->tail = current->prev;
-        }
-        else if (index > this->size / 2) {
+        } else if (index > this->size / 2) {
             int i = this->size;
             DoubleLinkedListNode<T> *current = this->tail;
             while (current != nullptr) {

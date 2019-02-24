@@ -70,16 +70,33 @@ public:
         }
     }
 
+    void pop() override {
+        if (this->head == nullptr) {
+            return;
+        }
+        if (this->head->next == nullptr) {
+            delete this->head;
+        }
+        else {
+            this->head = this->head->next;
+        }
+        this->size--;
+    }
+
     void remove(int index) override {
+        if (index < 1 || index > this->size)
+            return;
         if (this->head == nullptr) {
             return ;
         }
         int i = 0;
         LinkedListNode<T> *current = this->head;
-        if (this->size == 1) {
+        if (this->head->next == nullptr) {
+            this->head = nullptr;
             delete this->head;
         } else if (index == 1) {
-            this->head = this->head->next;
+            this->pop();
+            return;
         } else {
             while (current != nullptr) {
                 if (index - 1 == i + 1) {

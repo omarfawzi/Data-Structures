@@ -10,6 +10,8 @@ protected:
 public:
     virtual void push(T item) = 0;
 
+    virtual void pop() = 0;
+
     virtual void print() = 0;
 
     int getSize(){
