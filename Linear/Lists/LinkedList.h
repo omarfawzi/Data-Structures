@@ -10,7 +10,7 @@ class LinkedList : public ListInterface<T> {
 private:
     LinkedListNode<T> *head;
 public:
-    void insertLast(T item) override {
+    void push(T item) override {
         LinkedListNode<T> *current = this->head;
         if (current == nullptr) {
             this->head = new LinkedListNode<T>(item);
@@ -25,7 +25,7 @@ public:
 
     void insertFirst(T item) override {
         if (this->head == nullptr) {
-            this->insertLast(item);
+            this->push(item);
             return ;
         }
         LinkedListNode<T> *first = new LinkedListNode<T>(item);
@@ -36,7 +36,7 @@ public:
 
     void insertAfter(T item, int index) override {
         if (this->head == nullptr) {
-            this->insertLast(item);
+            this->push(item);
             return ;
         }
         int i = 1;

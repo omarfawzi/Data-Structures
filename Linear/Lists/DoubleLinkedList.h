@@ -10,7 +10,7 @@ private :
     DoubleLinkedListNode<T> *head;
     DoubleLinkedListNode<T> *tail;
 public:
-    void insertLast(T item) override {
+    void push(T item) override {
         DoubleLinkedListNode<T> *newNode = new DoubleLinkedListNode<T>(item);
         if (this->head == nullptr) {
             this->head = newNode;
