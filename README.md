@@ -11,7 +11,7 @@ This repository classifies datastructure into :
 - Lists (100%)
   - Linked List (100%)
   - Double Linked List (100%)
-- Stack (0%)
+- Stack (100%)
 - Queue (0%)
 
 ### Non Linear Data Structures
