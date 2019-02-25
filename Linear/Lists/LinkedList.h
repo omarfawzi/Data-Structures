@@ -75,6 +75,7 @@ public:
             return;
         }
         if (this->head->next == nullptr) {
+            this->head = nullptr;
             delete this->head;
         }
         else {
