@@ -1,14 +1,9 @@
-//
-// Created by salama on 2/22/19.
-//
-
 #include "../Linear/Lists/LinkedList.h"
 #include "../Linear/Lists/DoubleLinkedList.h"
-#include "Factory.h"
 
 template<typename T>
 
-class ListFactory : public Factory<T> {
+class ListFactory{
 public:
     ListInterface<T> *getList(const std::string &list) {
         if (list == "LinkedList") {
