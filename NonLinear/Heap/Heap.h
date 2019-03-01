@@ -1,13 +1,13 @@
 template<typename T>
 
-class HeapInterface {
+class Heap {
 protected:
     T *heap;
     int size = 0;
 public:
-    HeapInterface() = default;
+    Heap() = default;
 
-    HeapInterface(T *heap, int size) {
+    Heap(T *heap, int size) {
         this->heap = new T(size);
         this->size = size;
     }

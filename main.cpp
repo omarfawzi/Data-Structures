@@ -7,7 +7,7 @@ using namespace std;
 int main() {
     ListFactory<int> *listFactory;
     try {
-        ListInterface<int> *list = listFactory->getList("LinkedList");
+        List<int> *list = listFactory->getList("LinkedList");
     } catch (exception const &ex) {
         cout << ex.what();
     }

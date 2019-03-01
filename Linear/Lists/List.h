@@ -1,6 +1,6 @@
 template<typename T>
 
-class ListInterface {
+class List {
 protected:
     int size = 0;
 public:

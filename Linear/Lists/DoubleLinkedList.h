@@ -5,7 +5,7 @@
 //
 template<typename T>
 
-class DoubleLinkedList : public ListInterface<T> {
+class DoubleLinkedList : public List<T> {
 private :
     DoubleLinkedListNode<T> *head;
     DoubleLinkedListNode<T> *tail;

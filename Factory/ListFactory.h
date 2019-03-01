@@ -5,7 +5,7 @@ template<typename T>
 
 class ListFactory{
 public:
-    ListInterface<T> *getList(const std::string &list) {
+    List<T> *getList(const std::string &list) {
         if (list == "LinkedList") {
             return new LinkedList<T>();
         }

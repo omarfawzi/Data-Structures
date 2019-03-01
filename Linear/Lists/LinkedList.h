@@ -1,12 +1,12 @@
 //
 // Created by salama on 2/22/19.
 //
-#include "ListInterface.h"
+#include "List.h"
 #include "Nodes/LinkedListNode.h"
 
 template<typename T>
 
-class LinkedList : public ListInterface<T> {
+class LinkedList : public List<T> {
 private:
     LinkedListNode<T> *head;
 public:
