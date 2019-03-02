@@ -2,26 +2,22 @@
 
 #include "Factory/ListFactory.h"
 #include "Factory/HeapFactory.h"
+#include "Factory/TreeFactory.h"
 
 using namespace std;
 
 int main() {
     ListFactory<int> *listFactory;
     HeapFactory<int> *heapFactory;
+    TreeFactory<int> *treeFactory;
     try {
-        List<int> *list = listFactory->getList("LinkedList");
-        Heap<int> *heap = heapFactory->getHeap("MaxHeap", 10);
-        heap->push(5);
-        heap->push(3);
-        heap->push(2);
-        heap->push(1);
-        heap->push(4);
-        heap->print();
-        std::cout << heap->pop() << "\n";
-        std::cout << heap->pop() << "\n";
-        std::cout << heap->pop() << "\n";
-        std::cout << heap->pop() << "\n";
-        std::cout << heap->pop() << "\n";
+        Tree<int> *tree = treeFactory->getTree("BST");
+        tree->setRoot(tree->insert(1, nullptr));
+        tree->insert(2, tree->getRoot());
+        tree->insert(4, tree->getRoot());
+        tree->insert(3, tree->getRoot());
+        tree->insert(5, tree->getRoot());
+        std::cout << tree->search(6, tree->getRoot())->data;
     } catch (exception const &ex) {
         cout << ex.what();
     }
