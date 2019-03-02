@@ -18,7 +18,7 @@ This repository classifies data-structures into :
 - Trees (0%)
   - Min Heap (100%)
   - Max Heap (100%)
-  - Binary Search Tree (0%)
+  - Binary Search Tree (100%)
   - Balanced Binary Search Tree (AVL) (0%)
   - B Tree (0%)
   - Red Black Tree (0%)
