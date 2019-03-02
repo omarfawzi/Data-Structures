@@ -5,6 +5,7 @@ protected:
     T *heap;
     int size = 0;
     int cursor = 0;
+    T replaceValue;
 
     int parent(int i) {
         return (i - 1) / 2;
@@ -27,14 +28,27 @@ public:
         siftUp(this->cursor - 1);
     };
 
-    virtual T pop() = 0;
+    T pop() {
+        if (this->cursor == 0) {
+            return -1;
+        }
+        if (this->cursor == 1) {
+            this->cursor--;
+            return this->heap[0];
+        }
+        T root = this->heap[0];
+        this->heap[0] = this->heap[this->cursor - 1];
+        this->cursor--;
+        this->heapify(0);
+        return root;
+    };
 
     virtual void siftUp(int index) = 0;
 
     virtual void heapify(int i) = 0;
 
     void remove(int i) {
-        this->replace(i, INT_MIN);
+        this->replace(i, this->replaceValue);
         this->pop();
     }
 

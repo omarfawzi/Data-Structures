@@ -7,21 +7,7 @@ public:
     explicit MinHeap(int size) {
         this->size = size;
         this->heap = new T[size];
-    }
-
-    T pop() override {
-        if (this->cursor == 0) {
-            return INT_MAX;
-        }
-        if (this->cursor == 1) {
-            this->cursor--;
-            return this->heap[0];
-        }
-        T root = this->heap[0];
-        this->heap[0] = this->heap[this->cursor - 1];
-        this->cursor--;
-        this->heapify(0);
-        return root;
+        this->replaceValue = INT_MIN;
     }
 
     void siftUp(int index) override {
