@@ -7,11 +7,11 @@ template<typename T>
 
 class HeapFactory {
 public:
-    Heap<T> *getHeap(const std::string &heap) {
+    Heap<T> *getHeap(const std::string &heap, int size) {
         if (heap == "MinHeap") {
-            return new MinHeap<T>();
+            return new MinHeap<T>(size);
         } else if (heap == "MaxHeap") {
-            return new MaxHeap<T>();
+            return new MaxHeap<T>(size);
         } else {
             throw std::out_of_range("Invalid Heap Type : " + heap);
         }

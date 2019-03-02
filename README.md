@@ -2,7 +2,7 @@
 
 This Repository focuses on exposing how data structures works internally instead of relying directly on C++ std library .
 
-This repository classifies datastructure into :
+This repository classifies data-structures into :
 
 1 - Linear Data Structures </br>
 2 - Non Linear Data Structures <br/>
@@ -16,8 +16,8 @@ This repository classifies datastructure into :
 
 ### Non Linear Data Structures
 - Trees (0%)
-  - Min Heap (0%)
-  - Max Heap (0%)
+  - Min Heap (100%)
+  - Max Heap (100%)
   - Binary Search Tree (0%)
   - Balanced Binary Search Tree (AVL) (0%)
   - B Tree (0%)
