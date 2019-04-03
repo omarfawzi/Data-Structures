@@ -1,6 +1,6 @@
 template<typename T>
 
-class BST : public Tree<T> {
+class AVL : public Tree<T> {
 public:
     TreeNode<T> *insert(T value, TreeNode<T> *node) override {
         if (node == nullptr) {

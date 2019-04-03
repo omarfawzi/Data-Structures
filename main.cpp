@@ -7,8 +7,6 @@
 using namespace std;
 
 int main() {
-    ListFactory<int> *listFactory;
-    HeapFactory<int> *heapFactory;
     TreeFactory<int> *treeFactory;
     try {
         Tree<int> *tree = treeFactory->getTree("BST");
